@@ -1,0 +1,31 @@
+.button__root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: calc(var(--spacing-sm) + 0px) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.button__root--download {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.button__root--download:focus {
+  outline: 3px solid rgba(170,59,255,0.18);
+  outline-offset: 3px;
+}
+
+.button__icon {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.button__label {
+  display: inline-block;
+}

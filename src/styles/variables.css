@@ -1,0 +1,81 @@
+/* Global design tokens: color palette & typography */
+:root {
+  /* Primary scale */
+  --color-primary-50: #f7f0ff;
+  --color-primary-100: #eedbff;
+  --color-primary-200: #dfbfff;
+  --color-primary-300: #c994ff;
+  --color-primary-400: #b46dff;
+  --color-primary-500: #aa3bff;
+  --color-primary-600: #9030e6;
+  --color-primary-700: #6d22b4;
+  --color-primary-800: #4b186f;
+  --color-primary-900: #2a0c3a;
+
+  /* Neutral scale */
+  --color-neutral-50: #f9f9fb;
+  --color-neutral-100: #f4f3f6;
+  --color-neutral-200: #ece9ef;
+  --color-neutral-300: #e5e4e7;
+  --color-neutral-400: #d1cdd6;
+  --color-neutral-500: #bdb7c2;
+  --color-neutral-600: #9ca3af;
+  --color-neutral-700: #6b6375;
+  --color-neutral-800: #2e303a;
+  --color-neutral-900: #16171d;
+
+  /* Semantic tokens */
+  --color-text: var(--color-neutral-700);
+  --color-text-high: #08060d;
+  --color-bg: #ffffff;
+  --color-border: var(--color-neutral-300);
+  --color-code-bg: #f4f3ec;
+  --color-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --color-accent: var(--color-primary-500);
+  --color-accent-bg: rgba(170, 59, 255, 0.1);
+  --color-accent-border: rgba(170, 59, 255, 0.5);
+  --color-social-bg: rgba(244, 243, 236, 0.5);
+
+  /* Status colors */
+  --color-success-500: #16a34a;
+  --color-warning-500: #f59e0b;
+  --color-danger-500: #ef4444;
+  --color-info-500: #0284c7;
+
+  /* Typography tokens */
+  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: ui-monospace, Consolas, monospace;
+
+  /* Rhythm */
+  --base-font-size: 18px;
+  --base-line-height: 1.45;
+  /* Spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+
+  /* Rounding & misc */
+  --radius-sm: 8px;
+
+  /* On-color tokens */
+  --color-on-accent: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #9ca3af;
+    --color-text-high: #f3f4f6;
+    --color-bg: #16171d;
+    --color-border: #2e303a;
+    --color-code-bg: #1f2028;
+    --color-accent: #c084fc;
+    --color-accent-bg: rgba(192, 132, 252, 0.15);
+    --color-accent-border: rgba(192, 132, 252, 0.5);
+    --color-social-bg: rgba(47, 48, 58, 0.5);
+    --color-shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
