@@ -7,12 +7,19 @@ type Props = {
   filename?: string
   ariaLabel?: string
   children?: React.ReactNode
+  variant?: 'primary' | 'secondary' | 'ghost'
 }
 
-export default function DownloadButton({ href, filename, ariaLabel, children = 'Download' }: Props) {
+export default function DownloadButton({ href, filename, ariaLabel, children = 'Download', variant = 'primary' }: Props) {
+  const variantClass = variant === 'primary'
+    ? 'button__root--primary'
+    : variant === 'secondary'
+      ? 'button__root--secondary'
+      : 'button__root--ghost'
+
   return (
     <a
-      className="button__root button__root--download"
+      className={`button__root ${variantClass}`}
       href={href}
       download={filename}
       aria-label={ariaLabel || String(children)}

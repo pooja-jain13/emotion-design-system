@@ -5,19 +5,53 @@
   padding: calc(var(--spacing-sm) + 0px) var(--spacing-md);
   border-radius: var(--radius-sm);
   text-decoration: none;
-  font-family: var(--font-sans);
-  font-weight: 600;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
   border: none;
 }
 
+.button__root--primary {
+  background: var(--color-primary-main);
+  color: var(--color-on-accent);
+}
+
+.button__root--primary:focus {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+/* Backwards compatibility: keep existing modifier name working */
 .button__root--download {
-  background: var(--color-accent);
+  background: var(--color-primary-main);
   color: var(--color-on-accent);
 }
 
 .button__root--download:focus {
-  outline: 3px solid rgba(170,59,255,0.18);
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+/* Secondary: lighter primary, used for secondary emphasis */
+.button__root--secondary {
+  background: var(--color-primary-light);
+  color: #ffffff;
+}
+
+.button__root--secondary:focus {
+  outline: 3px solid rgba(26,130,79,0.16);
+  outline-offset: 3px;
+}
+
+/* Ghost / outline button */
+.button__root--ghost {
+  background: transparent;
+  color: var(--color-primary-main);
+  border: 1px solid var(--color-border);
+}
+
+.button__root--ghost:focus {
+  outline: 3px solid rgba(14,77,49,0.12);
   outline-offset: 3px;
 }
 

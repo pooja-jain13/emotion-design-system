@@ -1,81 +1,158 @@
-/* Global design tokens: color palette & typography */
+/* src/styles/variables.css
+   Design tokens and small usage examples for the Emotion Design System.
+   Grouped and commented for easy maintenance.
+*/
+
 :root {
-  /* Primary scale */
-  --color-primary-50: #f7f0ff;
-  --color-primary-100: #eedbff;
-  --color-primary-200: #dfbfff;
-  --color-primary-300: #c994ff;
-  --color-primary-400: #b46dff;
-  --color-primary-500: #aa3bff;
-  --color-primary-600: #9030e6;
-  --color-primary-700: #6d22b4;
-  --color-primary-800: #4b186f;
-  --color-primary-900: #2a0c3a;
+  /* --- Color Palette --- */
+  
+  /* Primary Greens */
+  --color-primary-main: #0E4D31;      /* Dark forest green (Buttons, Active states) */
+  --color-primary-light: #1A824F;     /* Vibrant green (Cards, Stats) */
+  --color-primary-surface: #E9F2EE;   /* Very light mint (Hover/Soft backgrounds) */
+  --color-accent-mint: #74C69D;       /* Mid-tone mint (Charts/Progress) */
 
-  /* Neutral scale */
-  --color-neutral-50: #f9f9fb;
-  --color-neutral-100: #f4f3f6;
-  --color-neutral-200: #ece9ef;
-  --color-neutral-300: #e5e4e7;
-  --color-neutral-400: #d1cdd6;
-  --color-neutral-500: #bdb7c2;
-  --color-neutral-600: #9ca3af;
-  --color-neutral-700: #6b6375;
-  --color-neutral-800: #2e303a;
-  --color-neutral-900: #16171d;
+  /* Neutral Scale */
+  --color-bg-main: #F8F9FA;           /* Light grey/white background */
+  --color-bg-card: #FFFFFF;           /* Pure white for card elevation */
+  --color-text-main: #1A1C1E;         /* Near black for headings */
+  --color-text-muted: #6C757D;        /* Grey for labels and captions */
+  --color-border: #E0E4E8;            /* Thin dividers and strokes */
 
-  /* Semantic tokens */
-  --color-text: var(--color-neutral-700);
-  --color-text-high: #08060d;
-  --color-bg: #ffffff;
-  --color-border: var(--color-neutral-300);
-  --color-code-bg: #f4f3ec;
-  --color-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Status Colors */
+  --color-status-completed: #D1E7DD;  /* Light green pill */
+  --color-status-progress: #FFF3CD;   /* Light yellow pill */
+  --color-status-pending: #F8D7DA;    /* Light red pill */
 
-  --color-accent: var(--color-primary-500);
-  --color-accent-bg: rgba(170, 59, 255, 0.1);
-  --color-accent-border: rgba(170, 59, 255, 0.5);
-  --color-social-bg: rgba(244, 243, 236, 0.5);
+  /* --- Typography --- */
+  
+  /* Using a clean Sans-Serif like Inter, Plus Jakarta Sans, or Outfit */
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  
+  --font-size-h1: 2rem;               /* "Dashboard" title */
+  --font-size-h2: 1.25rem;            /* Card titles */
+  --font-size-body: 0.875rem;         /* Standard UI text */
+  --font-size-small: 0.75rem;         /* Metadata/Labels */
+  
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
 
-  /* Status colors */
-  --color-success-500: #16a34a;
-  --color-warning-500: #f59e0b;
-  --color-danger-500: #ef4444;
-  --color-info-500: #0284c7;
+  /* --- Spacing & Layout --- */
+  
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
 
-  /* Typography tokens */
-  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: var(--font-sans);
-  --font-mono: ui-monospace, Consolas, monospace;
+  /* --- Borders & Radius --- */
+  
+  --radius-sm: 8px;                   /* Input fields / Small pills */
+  --radius-md: 16px;                  /* Standard buttons / Smaller cards */
+  --radius-lg: 24px;                  /* Main dashboard cards */
+  --radius-full: 9999px;              /* Round buttons/avatars */
 
-  /* Rhythm */
+  /* --- Elevation --- */
+  
+  /* Very subtle shadows to maintain the flat-plus look */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+  /* --- Compatibility aliases (legacy token mappings) --- */
+  /* These map older token names used across the repo to the new tokens.
+     Prefer using the new tokens in components going forward. */
+  --font-sans: var(--font-family);
+  --heading: var(--font-family);
+  --mono: ui-monospace, Consolas, monospace;
   --base-font-size: 18px;
   --base-line-height: 1.45;
-  /* Spacing scale */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 0.75rem;
-  --spacing-lg: 1rem;
-  --spacing-xl: 1.5rem;
-
-  /* Rounding & misc */
-  --radius-sm: 8px;
-
-  /* On-color tokens */
+  --color-text: var(--color-text-main);
+  --text-h: var(--color-text-main);
+  --color-bg: var(--color-bg-main);
+  --code-bg: #f4f3ec;
+  --border: var(--color-border);
+  --color-accent: var(--color-primary-main);
   --color-on-accent: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: #9ca3af;
-    --color-text-high: #f3f4f6;
-    --color-bg: #16171d;
-    --color-border: #2e303a;
-    --color-code-bg: #1f2028;
-    --color-accent: #c084fc;
-    --color-accent-bg: rgba(192, 132, 252, 0.15);
-    --color-accent-border: rgba(192, 132, 252, 0.5);
-    --color-social-bg: rgba(47, 48, 58, 0.5);
-    --color-shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ---------------------------------------------------------
+   Usage examples (tiny, illustrative). Keep these as guidance
+   — actual components should live under src/components/.
+   Class names follow BEM-style conventions: block__element--modifier
+   --------------------------------------------------------- */
+
+/* Page-level defaults */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-main);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Headings */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+/* Card (block: card) */
+.card__container {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-lg);
+  color: var(--color-text-main);
+}
+
+/* Button (block: button) - primary variant */
+.button__primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-primary-main);
+  color: #ffffff;
+  padding: calc(var(--spacing-sm) + 2px) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Status pills (block: status, modifier examples) */
+.status__pill {
+  display: inline-block;
+  padding: 0 var(--spacing-sm);
+  height: 28px;
+  line-height: 28px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-small);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+}
+
+.status__pill--completed {
+  background-color: var(--color-status-completed);
+}
+
+.status__pill--progress {
+  background-color: var(--color-status-progress);
+}
+
+.status__pill--pending {
+  background-color: var(--color-status-pending);
+}
+
+/* Small utilities for spacing consistency */
+.u-spacing--stack-sm { margin-bottom: var(--spacing-sm); }
+.u-spacing--stack-md { margin-bottom: var(--spacing-md); }
+
+/* End of variables and tiny usage examples */
+
