@@ -1,42 +1,27 @@
 import './App.css'
+import LeftNav from './components/organisms/LeftNav/LeftNav'
 import { PrimaryButton, SecondaryButton, GhostButton } from './components/atoms/DownloadButton'
 import Card, { PrimaryCard, CompactCard, SubtleCard } from './components/molecules/Card'
 import Search from './components/molecules/Search'
-import Carousel from './components/molecules/Carousel'
-import NavBar from './components/organisms/NavBar'
 
 function App() {
   return (
     <>
-      <NavBar />
-      <main>
-      <h1>Emotion Design System — Demo</h1>
-      <p>Example download button using design tokens.</p>
-      <div style={{ margin: '16px 0' }}>
-        <Search onSearch={(v) => console.log('search:', v)} />
-      </div>
-
-      <Carousel
-        items={[
-          {
-            image: 'https://i.imgur.com/RkGx3O8.jpeg',
-            title: 'Curious Robot',
-            caption: 'A playful robot exploring its surroundings.',
-          },
-          {
-            image: 'https://i.imgur.com/7PKPPMo.jpeg',
-            title: 'Robo-Scout',
-            caption: 'An autonomous scout navigating the wild.',
-          },
-          {
-            image: 'https://i.imgur.com/JwWlREn.png',
-            title: 'Service Bot',
-            caption: 'A helpful service robot ready to assist.',
-          },
-        ]}
-        autoPlay
-        interval={4500}
-      />
+      <main className="layout__container">
+        <h1>Emotion Design System — Demo</h1>
+        <div className="layout__body">
+          <aside className="layout__aside">
+            {/* Left navigation organism */}
+            <LeftNav />
+          </aside>
+          <section className="layout__content">
+            <p>Example download button using design tokens.</p>
+            <div className="search-wrap">
+              <Search onSearch={(v) => console.log('search:', v)} />
+            </div>
+          </section>
+        </div>
+      {/* Carousel removed */}
       <PrimaryCard title="Primary Card">
         <p>This highlighted card uses the primary surface and border.</p>
         <div slot="footer">

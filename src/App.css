@@ -95,6 +95,33 @@
   }
 }
 
+/* Layout for Left Navigation + Content */
+.layout__container {
+  padding: var(--spacing-lg);
+}
+.layout__body {
+  display: grid;
+  grid-template-columns: var(--layout-left-nav-width) 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+.layout__aside {
+  width: 100%;
+  box-sizing: border-box;
+}
+.layout__content {
+  width: 100%;
+}
+.search-wrap {
+  margin: var(--spacing-md) 0;
+}
+
+@media (max-width: 768px) {
+  .layout__body {
+    grid-template-columns: 1fr;
+  }
+}
+
 #docs {
   border-right: 1px solid var(--color-border);
 

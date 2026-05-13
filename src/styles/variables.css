@@ -75,6 +75,8 @@
   --color-accent: var(--color-primary-main);
   --color-on-accent: #ffffff;
 }
+  /* Layout tokens */
+  --layout-left-nav-width: 220px;
 
 /* ---------------------------------------------------------
    Usage examples (tiny, illustrative). Keep these as guidance
