@@ -1,6 +1,5 @@
 // This component is an Organism because it composes navigation items (molecules/atoms)
 // into a left-side navigation panel that structures page-level navigation.
-import React from 'react'
 import './LeftNav.css'
 
 type NavItem = {
