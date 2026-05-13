@@ -100,10 +100,12 @@
   padding: var(--spacing-lg);
 }
 .layout__body {
-  display: grid;
-  grid-template-columns: var(--layout-left-nav-width) 1fr;
+  display: block;
   gap: var(--spacing-lg);
   align-items: start;
+}
+.layout__nav {
+  margin: calc(var(--spacing-sm)) 0 var(--spacing-md);
 }
 .layout__aside {
   width: 100%;
@@ -111,14 +113,46 @@
 }
 .layout__content {
   width: 100%;
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.search-wrap {
-  margin: var(--spacing-md) 0;
+.button-examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  align-items: flex-start;
+  margin-top: var(--spacing-md);
 }
+
+.button-examples--icons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  align-items: flex-start;
+  margin-top: var(--spacing-sm);
+}
+
+/* Stack for a heading + card so the heading sits above the card */
+.card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+/* search-wrap removed */
 
 @media (max-width: 768px) {
   .layout__body {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout__content {
+    display: block;
   }
 }
 

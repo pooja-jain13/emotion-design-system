@@ -17,6 +17,7 @@
   --color-bg-card: #FFFFFF;           /* Pure white for card elevation */
   --color-text-main: #1A1C1E;         /* Near black for headings */
   --color-text-muted: #6C757D;        /* Grey for labels and captions */
+  --color-secondary-text: #8B5E3C;    /* Warm brown used for secondary card captions */
   --color-border: #E0E4E8;            /* Thin dividers and strokes */
 
   /* Status Colors */
@@ -41,7 +42,21 @@
   /* --- Spacing & Layout --- */
   
   --spacing-xs: 4px;
+  --spacing-5: 5px;
   --spacing-sm: 8px;
+  /* Sizing tokens */
+  --size-50: 50px;
+  --size-80: 80px;
+  --size-100: 100px;
+  --size-200: 200px;
+  --size-150: 150px;
+  /* Card sizing tokens */
+  --size-300: 300px;
+  --size-350: 350px;
+  /* Card fixed sizing tokens (refer to sizing tokens, no magic numbers) */
+  --card-fixed-width: var(--size-300);
+  --card-fixed-height: var(--size-300);
+  --spacing-10: 10px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
