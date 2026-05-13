@@ -1,0 +1,112 @@
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  background: var(--color-primary-surface);
+  border: 1px solid var(--color-accent-mint);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  width: 340px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.notification__icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.notification__icon svg {
+  color: var(--color-bg-card);
+}
+
+.notification__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.notification__title {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.notification__message {
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.notification__close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-text-muted);
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification__close:hover {
+  color: var(--color-text-main);
+}
+
+/* Variant: success (green) */
+.notification--success {
+  background: var(--color-primary-surface);
+  border-color: var(--color-accent-mint);
+}
+
+.notification--success .notification__icon {
+  background: var(--color-primary-light);
+  color: var(--color-bg-card);
+}
+
+/* Variant: default (neutral gray) */
+.notification--default {
+  background: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+.notification--default .notification__icon {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1.5px solid var(--color-text-muted);
+}
+
+/* Variant: warning (yellow/amber) */
+.notification--warning {
+  background: var(--color-status-progress);
+  border-color: #FFECB5;
+}
+
+.notification--warning .notification__icon {
+  background: #FD7E14;
+  color: var(--color-bg-card);
+}
+
+/* Variant: error (red) */
+.notification--error {
+  background: var(--color-status-pending);
+  border-color: #F5C2C7;
+}
+
+.notification--error .notification__icon {
+  background: #DC3545;
+  color: var(--color-bg-card);
+}

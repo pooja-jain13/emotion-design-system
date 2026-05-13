@@ -6,6 +6,7 @@ import { PrimaryButton, SecondaryButton, GhostButton } from './components/atoms/
 import Card from './components/molecules/Card'
 import Pill from './components/atoms/Pill/Pill'
 import Slider from './components/atoms/Slider/Slider'
+import Notification from './components/atoms/Notification/Notification'
 
 function App() {
   const [activeTab, setActiveTab] = useState('buttons')
@@ -79,6 +80,28 @@ function App() {
                 </div>
               </>
             )}
+            {activeTab === 'notification' && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)' }}>
+                <Notification
+                  variant="success"
+                  title="Success"
+                  message="Lorem ipsum dolor sit amet, consectetur adipiscing"
+                  onClose={() => {}}
+                />
+                <Notification
+                  variant="error"
+                  title="Error"
+                  message="Lorem ipsum dolor sit amet, consectetur adipiscing"
+                  onClose={() => {}}
+                />
+                <Notification
+                  variant="warning"
+                  title="Warning"
+                  message="Lorem ipsum dolor sit amet, consectetur adipiscing"
+                  onClose={() => {}}
+                />
+              </div>
+            )}
             {activeTab === 'slider' && (
               <div className="slider-demo">
                 <div className="slider-demo__row">
@@ -125,10 +148,10 @@ function App() {
                       <h2 className="cards__label">Card with Image</h2>
                       <Card className="card--secondary">
                         <div className="card__media">
-                          <img src="https://i.imgur.com/YSjGUsX.jpeg" alt="Aloe Vera" />
+                          <img src="https://i.imgur.com/YSjGUsX.jpeg" alt="Card with Image" />
                         </div>
                         <div className="card__content">
-                          <h3>Aloe Vera</h3>
+                          <h3>Card with Image</h3>
                           <p className="card__subtitle">Intermediate Skill Level</p>
                         </div>
                       </Card>
@@ -138,10 +161,10 @@ function App() {
                       <h2 className="cards__label">Card with Image Above</h2>
                       <Card className="card--secondary-vertical">
                         <div className="card__media">
-                          <img src="https://i.imgur.com/YSjGUsX.jpeg" alt="Aloe Vera" />
+                          <img src="https://i.imgur.com/YSjGUsX.jpeg" alt="Card with Image Above" />
                         </div>
                         <div className="card__content">
-                          <h3>Aloe Vera</h3>
+                          <h3>Card with Image Above</h3>
                           <p className="card__subtitle">Intermediate Skill Level</p>
                         </div>
                       </Card>
@@ -161,10 +184,10 @@ function App() {
                       <h2 className="cards__label">Card with Image + Button</h2>
                       <Card className="card--secondary-lg" footer={<Button variant="primary">Primary Action</Button>}>
                         <div className="card__media">
-                          <img src="https://i.imgur.com/YSjGUsX.jpeg" alt="Aloe Vera" />
+                          <img src="https://i.imgur.com/YSjGUsX.jpeg" alt="Card with Image + Button" />
                         </div>
                         <div className="card__content">
-                          <h3>Aloe Vera</h3>
+                          <h3>Card with Image + Button</h3>
                           <p className="card__subtitle">Intermediate Skill Level</p>
                         </div>
                       </Card>
