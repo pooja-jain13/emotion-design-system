@@ -134,6 +134,55 @@
   margin-top: var(--spacing-sm);
 }
 
+.button-examples--hover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  align-items: flex-start;
+  margin-top: var(--spacing-md);
+}
+
+.button-examples--hover .button__root:hover {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Cards demo column layout */
+.cards-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.cards-demo__row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+/* Slider demo grid */
+.slider-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.slider-demo__row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.slider-demo__label {
+  width: 80px;
+  flex-shrink: 0;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
 /* Stack for a heading + card so the heading sits above the card */
 .card-stack {
   display: flex;
